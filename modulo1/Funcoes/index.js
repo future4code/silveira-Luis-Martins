@@ -25,15 +25,15 @@ const outraFuncao = function(texto) {
 const resposta = outraFuncao(textoDoUsuario)
 console.log(resposta)
 
+console.log()
+
+
 
 //Exercícios de escrita de código//
 
-//2
-function teoremaDePitagoras(cateto1, numero2) {
-  const soma = numero1 
-}
+//1.a:
 
-const nome = prompt("digitar nome")
+
 
 function fraseTrocada (nome,idade ,cidade,profissao){
  const frase = 'Eu sou, ' + nome + ' tenho ' + idade + ' anos, moro em ' + cidade + ' e sou ' + profissao + '.'
@@ -75,7 +75,9 @@ devolva(5, 10)
 devolva(3,2)
 
 //3
-//let insira1 = number(prompt("Digite o primeiro numero"))
+//let primeiro = number(prompt("Digite o primeiro numero"))
+
+
 
 function multiplicacao(primeiro, segundo){
   return primeiro * segundo
@@ -100,3 +102,7 @@ console.log(soma(primeiroNumeroDoUsuario,segundoNumeroDoUsuario))
 console.log(subtracao(primeiroNumeroDoUsuario,segundoNumeroDoUsuario))
 console.log(multiplicacao(primeiroNumeroDoUsuario,segundoNumeroDoUsuario))
 console.log(divisao(primeiroNumeroDoUsuario,segundoNumeroDoUsuario))
+
+function teoremaDePitagoras(cateto1, numero2) {
+  const soma = numero1 
+}
