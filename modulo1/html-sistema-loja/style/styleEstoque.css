@@ -1,0 +1,13 @@
+img {
+    margin: 2px 40px;
+}
+
+.tabela {
+    width: 100%;
+    background-color: rgb(245, 245, 248);
+}
+
+td {
+    text-align: center;
+    font-size: 18px;
+}

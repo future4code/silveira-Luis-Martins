@@ -5,23 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Controle de Estoque</title>
+    <link rel="stylesheet" type="text/css" href="./style/styleEstoque.css">
+    <link rel="stylesheet" type="text/css" href="./styleGenerico.css">
+
 </head>
 <body>
-    <div>
-        <p>Nome da lojinha</p>
+    <div class="cabecalhoOne">
+        <p>World Tech</p>
     </div>
     
-    <div>
-        <a href="./index.html">Página Inicial</a>
-        <a href="./ctrl-estoque.html">Controle de Estoque</a>
-        <a href="./add-produto.html">Adicionar Produto</a>
-        <a href="./funcionarios.html">Funcionários</a>
+    <div class="cabecalhoTwo">
+        <a href="index.html">Página Inicial</a>
+        <a href="ctrl-estoque.html">Controle de Estoque</a>
+        <a href="add-produto.html">Adicionar Produto</a>
+        <a href="funcionarios.html">Funcionários</a>
     </div>
 
-    <h2>Controle de Estoque</h2>
+    <h2 class="titulo" >Controle de Estoque</h2>
 
-    <table>
-        <tr>
+    <table class="tabela">
+        <tr class="elementoOne">
             <th>Foto</th>
             <th>Descrição</th>
             <th>Preço (R$)</th>
@@ -29,63 +32,63 @@
         </tr>
 
         <tr>
-            <td><img src="https://i.zst.com.br/thumbs/12/18/34/1947488800.jpg" alt="Processador AMD Ryzen 5 3600 Cache 32MB 3.6GHZ, AMD, 100-100000031BOX"/></td>
+            <td><img src="https://i.zst.com.br/thumbs/12/18/34/1947488800.jpg" alt="Processador AMD Ryzen 5 3600 Cache 32MB 3.6GHZ, AMD, 100-100000031BOX" height="140" width="165"/> </td>
             <td> Processador AMD Ryzen 5 3600 Cache 32MB 3.6GHZ, AMD, 100-100000031BOX </td>
             <td> R$ 1.725 </td>
             <td> 100 </td>
         </tr>
 
         <tr>
-            <td><img src="https://cdn.pichau.com.br/wysiwyg/Descricao/Asus/Prime-B450M-GAMINGBR-DDR4/Prime-B450M-GAMINGBR-DDR4.png" alt="PLACA MAE ASUS PRIME B450M-GAMING/BR DDR4 SOCKET AM4 CHIPSET AMD B450"/></td>
-            <td> PLACA MAE ASUS PRIME B450M-GAMING/BR DDR4 SOCKET AM4 CHIPSET AMD B450 </td>
+            <td><img src="https://cdn.pichau.com.br/wysiwyg/Descricao/Asus/Prime-B450M-GAMINGBR-DDR4/Prime-B450M-GAMINGBR-DDR4.png" alt="PLACA MAE ASUS PRIME B450M-GAMING/BR DDR4 SOCKET AM4 CHIPSET AMD B450" height="140" width="165"/></td>
+            <td> PLACA MAE ASUS PRIME B450M-GAMING/BR DDR4 SOCKET AM4 CHIPSET AMD </td>
             <td> R$557,90  </td>
             <td> 77 </td>
         </tr>
 
         <tr>
-            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpcjwmFnZvvgGvQUvj3OCtf0TJ_ZkmJa9GQM0HP68Wyfl3fkspT9eadQMIkI2nVcSzaHU&usqp=CAU" alt="Placa de Vídeo Galax NVIDIA GeForce GTX 1660 1-Click OC, 6GB, GDDR5"/></td>
+            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpcjwmFnZvvgGvQUvj3OCtf0TJ_ZkmJa9GQM0HP68Wyfl3fkspT9eadQMIkI2nVcSzaHU&usqp=CAU" alt="Placa de Vídeo Galax NVIDIA GeForce GTX 1660 1-Click OC, 6GB, GDDR5" height="140" width="165"/></td>
             <td> Placa de Vídeo Galax NVIDIA GeForce GTX 1660 1-Click OC, 6GB, GDDR5 - </td>
             <td> R$3,000.00 </td>
             <td> 9 </td>
         </tr>
 
         <tr>
-            <td><img src="https://http2.mlstatic.com/D_NQ_NP_2X_977167-MLA40973400061_032020-V.webp" alt="Memória DDR4 HyperX Predator RGB, 16GB"/></td>
+            <td><img src="https://http2.mlstatic.com/D_NQ_NP_2X_977167-MLA40973400061_032020-V.webp" alt="Memória DDR4 HyperX Predator RGB, 16GB" height="140" width="165"/></td>
             <td> Memória DDR4 HyperX Predator RGB, 16GB </td>
             <td> R$ 819,90 </td>
             <td> 88 </td>
         </tr>
-        
         <!-- Crie mais uma linha desta tabela abaixo \/ -->
 
+</table>
+    
+    </body>
+    </html>
+
     <table>
-
-<tr>
-    <th>Produto</th>
-    <th>Valor</th>
-    <th>Quantidade</th>
-</tr>
-<tr>
-    <td>Processador</td>
-    <td>R$1,725.00</td>
-    <td>100</td>
-</tr>
-<tr>
-    <td>Placa Mãe</td>
-    <td>R$557,90</td>
-    <td>77</td>
-</tr>
-<tr>
-    <td>Placa de Video</td>
-    <td>R$3,000.00</td>
-    <td>9</td>
-</tr>
-<tr>
-    <td>Memória</td>
-    <td>R$819,90</td>
-    <td>88</td>
-</tr>
-    </table>
-
-</body>
-</html>
+    <tr>
+        <th>Produto</th>
+        <th>Valor</th>
+        <th>Quantidade</th>
+    </tr>
+    <tr>
+        <td>Processador</td>
+        <td>R$1,725.00</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>Placa Mãe</td>
+        <td>R$557,90</td>
+        <td>77</td>
+    </tr>
+    <tr>
+        <td>Placa de Video</td>
+        <td>R$3,000.00</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>Memória</td>
+        <td>R$819,90</td>
+        <td>88</td>
+    </tr>
+        </table>

@@ -1,0 +1,44 @@
+body {
+    background-color:rgb(250, 249, 249);
+    margin: 4px;
+}
+
+
+.cabecalhoOne {
+
+    text-align: center;
+    border: rgb(38, 31, 126) solid;
+    background-color: rgb(12, 12, 12);
+    font-size: 10px;
+}
+.cabecalhoTwo {
+
+    text-align: center;
+    border: rgb(11, 11, 61) solid;
+    background-color: black;
+    margin: 10px 0;
+}
+
+.titulo {
+    text-align: center;
+    color: rgb(12, 12, 12);
+    font-size: 25px;
+}
+#texto1 {
+    color: aqua;
+}
+#texto2 {
+    color:aqua
+}
+
+#titulo1 {
+    color: rgb(237, 241, 241);
+}
+
+a{
+    color: azure;
+}
+p{
+    color: azure;
+    text-align: center;
+}
