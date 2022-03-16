@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
+
 }
 body {
     display: flex;
@@ -13,7 +13,7 @@ header {
     display: flex;
     width: 98%;
     height: 60px;
-    margin: 5px;
+    margin: 10px;
     background: coral;
     justify-content: space-between;
     align-items: center;
@@ -22,19 +22,20 @@ header {
 
 input {
     width: 20%;
-    margin-right: 20px;
+    margin-right: 5px;
 }
 
 a {
     display: flex;
     justify-content: center;
+    margin: auto;
 }
 
 main {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin: 30px 20px;
+    margin: 20px 10px;
 }
 
 
@@ -83,6 +84,36 @@ img{
     margin: 0px;
     padding: 0;
     display: flex;
-    flex-direction: column;
-    width: 70%;
+    flex-direction: center;
+    width: 100%;
 }
+
+
+@media screen and (max-device-width: 480px) {
+    .movie {
+        grid-template-columns: auto;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 3px 30px;
+    }
+    
+
+    main img{
+        flex-wrap: wrap;
+        grid-template-columns: auto;
+        flex-direction: center;
+        height: 80px;
+        align-items: center;
+    }
+
+    footer {
+        background-color: rgb(68, 66, 66);
+        position: relative;
+        bottom: 0;
+        margin-left: 5px;
+    }
+
+}
+
+
