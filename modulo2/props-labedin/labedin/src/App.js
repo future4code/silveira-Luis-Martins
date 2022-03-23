@@ -67,15 +67,6 @@ function App() {
           />        
         </Container>
 
-        <Container>
-          <TextoH2>Dados pessoais</TextoH2>
-          <CardGrande 
-            imagem="https://uploads-ssl.webflow.com/5d640f4558306be99cf47a0e/5dd57846babb597b77c6bb1d_PerfilFuture4_cor.png" 
-            nome="Estudante" 
-            descricao="Estudante e promissor FullStack !"
-          />
-        </Container>
-
       
 
     </Tudo>
