@@ -12,7 +12,7 @@ const MainContainer = styled.div`
 
  class App extends React.Component {
     state = {
-      Usuario : [
+      usuario : [
         {
         nomeUsuario: 'paulinha',
         fotoUsuario: 'https://picsum.photos/50/50',
