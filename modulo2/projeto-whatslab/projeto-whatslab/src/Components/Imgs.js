@@ -31,6 +31,8 @@ export const Foot = styled.div`
     background-color: black;
     position: relative;
     bottom: 0;
+    border-radius: 10px;
+
 `
 export const UmTerco = styled.input`
     width: 20%;
