@@ -33,7 +33,7 @@ class App extends React.Component {
 }
       ],
       inputValue: '',
-      filtro: ''
+      filter: ''
     }
 
   componentDidUpdate() {
@@ -75,16 +75,18 @@ const novaListaDeTarefas = this.state.tarefas.map((lista) => {
   }
 
   onChangeFilter = (event) => {
-
+this.setState ({filter: event.target.value})
   }
+
+
 
   render() {
     const listaFiltrada = this.state.tarefas.filter(tarefa => {
-      switch (this.state.filtro) {
+      switch (this.state.filter) {
         case 'pendentes':
-          return !tarefa.completa
+          return !tarefa.completo
         case 'completas':
-          return tarefa.completa
+          return tarefa.completo
         default:
           return true
       }
@@ -101,7 +103,7 @@ const novaListaDeTarefas = this.state.tarefas.map((lista) => {
 
         <InputsContainer>
           <label>Filtro</label>
-          <select value={this.state.filtro} onChange={this.onChangeFilter}>
+          <select value={this.state.filter} onChange={this.onChangeFilter}>
             <option value="">Nenhum</option>
             <option value="pendentes">Pendentes</option>
             <option value="completas">Completas</option>
@@ -111,7 +113,7 @@ const novaListaDeTarefas = this.state.tarefas.map((lista) => {
           {listaFiltrada.map(tarefa => {
             return (
               <Tarefa
-                completa={tarefa.completa}
+                completa={tarefa.completo}
                 onClick={() => this.selectTarefa(tarefa.id)}
               >
                 {tarefa.texto}
