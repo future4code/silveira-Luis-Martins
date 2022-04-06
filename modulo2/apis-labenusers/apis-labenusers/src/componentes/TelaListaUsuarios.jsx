@@ -23,6 +23,21 @@ const BotaoVoltar = styled.button`
   }
 `;
 
+const ButtonDelet = styled.button`
+background-color: rgb(8, 8, 8);
+box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+color: red;
+cursor: pointer;
+:hover{
+    background-color: rgba(8, 8, 8, 0.7);
+  }
+  :active{
+    background-color: rgba(27, 97, 114, 0.9);
+  };
+`
+
+
+
 const ContainerFlex = styled.div`
   display: flex;
   flex-direction: column;
@@ -122,12 +137,14 @@ class TelaListaUsuarios extends React.Component {
     render () {
 
         const componentesUsuarios = this.state.usuarios.map((usuario) => {
-          return <ItemLista key={usuario.id}>{usuario.name} <span onClick={() => this.onClickDeleteUser(usuario.id)}><i className="far fa-trash-alt"></i></span></ItemLista>
+          return <ItemLista key={usuario.id}>{usuario.name} <span onClick={() => this.onClickDeleteUser(usuario.id)}>
+            <i className="far fa-trash-alt"></i><ButtonDelet>X</ButtonDelet></span></ItemLista>
         });
 
         return (
             <div>
-              <BotaoVoltar onClick={() => { this.props.mudarTelaAtual("cadastro")}}><i class="fas fa-arrow-left"></i> Voltar</BotaoVoltar>
+              <BotaoVoltar onClick={() => { this.props.mudarTelaAtual("cadastro")}}>
+                <i class="fas fa-arrow-left"></i> Voltar</BotaoVoltar>
 
               <ContainerFlex>
                 <TituloPagina>

@@ -132,7 +132,8 @@ class TelaCadastro extends React.Component {
 
         return (
             <div>
-              <BotaoVoltar onClick={() => { this.props.mudarTelaAtual("listaUsuarios")}}><i className="fas fa-users"></i> Listar Usuários Cadastrados</BotaoVoltar>
+              <BotaoVoltar onClick={() => { this.props.mudarTelaAtual("listaUsuarios")}}>
+                <i className="fas fa-users"></i>Usuários Cadastrados</BotaoVoltar>
 
               <ContainerFlex>
                 <TituloPagina>
@@ -150,7 +151,8 @@ class TelaCadastro extends React.Component {
                     onChange={this.onChangeInputEmail}
                     placeholder="Email"
                   />
-                  <BotaoEnviar onClick={this.postCreateUser}><i className="fas fa-user"></i> Criar Usuário</BotaoEnviar>
+                  <BotaoEnviar onClick={this.postCreateUser}>
+                    <i className="fas fa-user"></i> Criar Usuário</BotaoEnviar>
                 </ContainerInputForm>                
 
 
