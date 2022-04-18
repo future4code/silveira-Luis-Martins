@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import styled from 'styled-components';
+import MainApp from "./MainApp";
 
 
 
@@ -82,7 +83,7 @@ export default class PlaylistsCadastradas extends React.Component {
       
             return (
               <CardFundoTela>
-                <button onClick={this.props.MainApp}>Voltar Para Home</button>
+                <button onClick={() => this.props.irParaCadastro(MainApp)}>Voltar Para Home</button>
                 <h2>Minhas Playlists</h2>
                 {listaPlaylists}
               </CardFundoTela>
