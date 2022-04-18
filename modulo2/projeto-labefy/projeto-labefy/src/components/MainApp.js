@@ -49,7 +49,7 @@ export default class MainApp extends Component {
   render() {
     return (
         <Container style={{backgroundImage: `url(${Image})`, backgroundPosition: 'center',   backgroundSize: 'cover',   backgroundRepeat: 'no-repeat', height: '200vh', width: '100%'}}>
-        <CardTexto1>Música e uma arte!</CardTexto1>
+        <CardTexto1>Música e uma arte!!</CardTexto1>
         <CardTexto2>Milhões de músicas para explorar!</CardTexto2>
         <CardButton>Labefy Music Box</CardButton>
         </Container>        
