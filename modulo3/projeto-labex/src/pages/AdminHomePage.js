@@ -1,14 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export const FormUser = () => {
+export const AdminHomePage = () => {
     const navigate = useNavigate()
 
-    const goToAdm = () => {
-        navigate("/LoginAdm")
+    const goToHomePage = () => {
+        navigate("/")
     }
-    const goToSignupUser = () => {
-        navigate("/formPage")
+    const goToTripDetailsPage = () => {
+        navigate("/TripDetailsPage")
     }
 
 
@@ -18,8 +18,9 @@ export const FormUser = () => {
 
 <p>Para o administrador ver a lista de viagens e poder 
     deletá-las ou acessar o detalhe de cada uma delas</p>
-    <button onClick={goToAdm}>Area logada</button>
-    <button onClick={goToSignupUser}>Area não logada</button>
+    
+    <button onClick={goToHomePage}>Home</button>
+    <button onClick={goToTripDetailsPage}>Detalhes das viagens</button>
 
     { <div>
 
