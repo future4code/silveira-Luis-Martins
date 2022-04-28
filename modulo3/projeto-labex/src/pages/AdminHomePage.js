@@ -8,7 +8,7 @@ export const AdminHomePage = () => {
         navigate("/")
     }
     const goToTripDetailsPage = () => {
-        navigate("/TripDetailsPage")
+        navigate("/admin/trips/:id")
     }
 
 

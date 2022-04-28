@@ -29,7 +29,7 @@ axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/darvas/trip/
         navigate("/")
     }
     const goToTripDetailsPage = () => {
-        navigate("/AdminHomePage")
+        navigate("/admin/trips/list")
     }
 
 

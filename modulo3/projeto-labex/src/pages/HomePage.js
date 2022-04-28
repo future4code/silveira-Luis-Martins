@@ -6,10 +6,10 @@ export const HomePage = () => {
     const navigate = useNavigate()
 
     const goToLoginPage = () => {
-        navigate("/LoginPage")
+        navigate("/login")
     }
     const goToListTripsPage = () => {
-        navigate("/ListTripsPage")
+        navigate("/trips/list")
     }
   
     return (

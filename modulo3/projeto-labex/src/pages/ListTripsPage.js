@@ -1,15 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import useForm from "../hooks/useRequestData";
 
-export const ListTripsPage = () => {
+
+
+
+export const ListTripsPage = (props) => {
     const navigate = useNavigate()
+    
 
     const goToHomePage = () => {
         navigate("/")
     }
     const goToApplicationFormPage = () => {
-        navigate("/ApplicationFormPage")
+        navigate("/admin/trips/create")
     }
+
 
     return (
         <div>

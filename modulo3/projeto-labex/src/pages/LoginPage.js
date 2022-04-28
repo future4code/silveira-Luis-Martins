@@ -6,10 +6,15 @@ import axios from "axios";
 
 
 export const LoginPage = () => {
+    const navigate = useNavigate()
+    
+    const goToHomePage = () => {
+        navigate("/")
+    }
+  
+
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
-
-// const history = useNavigate();
 
 const onChangeEmail = (event) => {
     setEmail(event.target.value);
@@ -27,21 +32,12 @@ const onSubmitLogin = () => {
     .then((response)=>{
         console.log('Deu certo:', response.data.token);
         localStorage.setItem('token', response.data.token)
-        // history.push("/TripDetailsPage")
+        navigate("/admin/trips/list")
     }).catch((error) => {
         console.log('Não deu certo:', error.response);
     })
     
 };
-
-    const navigate = useNavigate()
-
-    const goToAdminHomePage = () => {
-        navigate("/AdminHomePage")
-    }
-    const goToHomePage = () => {
-        navigate("/")
-    }
 
 
     return (
@@ -50,7 +46,7 @@ const onSubmitLogin = () => {
 <div>
 <button onClick={goToHomePage}>Home</button>
 <p>Para fazermos login como administrador</p>
-<button onClick={goToAdminHomePage}>goToAdminHomePage</button>
+
 </div>
 
 <div>
@@ -59,6 +55,7 @@ const onSubmitLogin = () => {
     type="email"
     value={email}
     onChange={onChangeEmail}
+    required
     />
 </div>
 <div>
@@ -67,6 +64,7 @@ const onSubmitLogin = () => {
     type="password"
     value={password}
     onChange={onChangePassword}
+    required
     />
 </div>
 
