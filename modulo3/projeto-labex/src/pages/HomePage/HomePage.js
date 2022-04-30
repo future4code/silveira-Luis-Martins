@@ -1,32 +1,25 @@
 import { useNavigate } from "react-router-dom";
 import { goToTripsList, goToAdminHomePage } from "../../routes/coordinator";
-import { HomePageContainer } from "./styles";
+import { ButtonTrips, ButtonAdm,LogoImg,BotaoDiv} from "./styles";
 import logo from "../../assets/img/logo.png";
-import { DefaultButton } from "../../components/DefaultButton/DefaultButton";
-
-
-
 
 
 export function HomePage() {
     const navigate = useNavigate();
 
     return (
-        <HomePageContainer>
+    <div>
 
 
+        <BotaoDiv>
+        <ButtonTrips onClick={() => goToTripsList(navigate)}><h1>Viagens</h1> </ButtonTrips>
+        <ButtonAdm onClick={() => goToAdminHomePage(navigate)} ><h1> Area Adm</h1> </ButtonAdm>
+        </BotaoDiv>
 
-            <div>
-                <img src={logo} alt="logo" />
-            </div>
-
-
-            <div>
-                <DefaultButton onClick={() => goToTripsList(navigate)} text={"Ver viagens"} />
-                <DefaultButton onClick={() => goToAdminHomePage(navigate)} text={"Área de Admin"} />
-            </div>
-
-
-        </HomePageContainer>
-    );
+        <LogoImg>
+            <img src={logo} alt="logo" />
+        </LogoImg>
+               
+    </div>
+);
 };

@@ -18,7 +18,7 @@ export function AdminHomePage() {
 
     const deleteTrip = async (tripId) => {
        
-        if(window.confirm("Tem certeza que deseja remover a viagem selecionada?")) {
+        if(window.confirm("Confirma remover a viagem selecionada?")) {
             try {
                 const headersAPI = {
                     headers: {
@@ -27,7 +27,7 @@ export function AdminHomePage() {
                 };
 
                 await axios.delete(`${BASE_URL}/trips/${tripId}`, headersAPI);
-                alert("Viagem removida com sucesso!");
+                alert("Viagem removida!");
                 getTrips();
 
             } catch(error) {
@@ -38,7 +38,7 @@ export function AdminHomePage() {
     };
 
     const logout = () => {
-        alert("Logout realizado");
+        alert("Logout concluido");
         localStorage.removeItem("token");
         goToLoginPage(navigate);
     };
@@ -46,7 +46,7 @@ export function AdminHomePage() {
     return (
         <ContainerAdminHomePage>
 
-            <PageTitle text={"Painel administrativo"} />
+            <PageTitle text={"Viagens"} />
 
             {isLoading && <OutOfBoxText>Carregando...</OutOfBoxText>}
 

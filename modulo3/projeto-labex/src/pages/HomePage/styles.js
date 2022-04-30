@@ -1,30 +1,50 @@
 import styled from "styled-components";
-import logoBackground from "../../assets/img/background.png";
 
-export const HomePageContainer = styled.div`
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; */
-    /* border-radius: 5px; */
 
-    // Container Logo
-    div:first-of-type {
-        background-image: url(${logoBackground});
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 5px;
+export const LogoImg = styled.div`
+display:flex;
+img {
+    display:flex;
+align-self: center;
+width: 70%;
+position: center;
+}
+`
 
-        // Logo
-        img {
-            display:flex;
-            align-self: center;
-            width: 45%;
-            position: botton;
-            top: 10%;
-            left: 100%;
-        }
-    }
+export const BotaoDiv = styled.div`
+display:flex;
+align-self: center;
+position: top;
+`
+
+export const ButtonTrips = styled.button`
+background: #247589;
+padding: 20px;
+margin: 90px;
+color: black;
+border-radius: 5px;
+border: none;
+h1{
+    color:black;
+}
+&:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+`
+
+export const ButtonAdm = styled.button`
+background: #247589;
+padding: 20px;
+margin: 90px;
+color: black;
+border-radius: 5px;
+border: none;
+h1{
+    color:black;
+}
+&:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
 `

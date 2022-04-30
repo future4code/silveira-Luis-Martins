@@ -40,7 +40,7 @@ export function ApplicationFormPage() {
         event.preventDefault();
         try {
             await axios.post(`${BASE_URL}/trips/${tripId}/apply`, form);
-            alert("Inscrição efetuada com sucesso!");
+            alert("Inscrição concluida com sucesso!");
             cleanFields();
 
         } catch (error) {
