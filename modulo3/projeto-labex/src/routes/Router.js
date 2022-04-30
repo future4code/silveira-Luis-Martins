@@ -1,30 +1,26 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {ListTripsPage} from "../pages/ListTripsPage"
-import {ApplicationFormPage} from "../pages/ApplicationFormPage"
-import {LoginPage} from "../pages/LoginPage"
-import {AdminHomePage} from "../pages/AdminHomePage"
-import {TripDetailsPage} from "../pages/TripDetailsPage"
-import {CreateTripPage} from "../pages/CreateTripPage"
-import {HomePage} from "../pages/HomePage"
+import { AdminHomePage } from "../pages/AdminHome Page/AdminHomePage";
+import { ApplicationFormPage } from "../pages/ApplicationFormPage/ApplicationFormPage";
+import { HomePage } from "../pages/HomePage/HomePage";
+import { ListTripsPage } from "../pages/TripListPage/TripsListPage";
+import { LoginPage } from "../pages/LoginPage/LoginPage";
+import { CreateTripPage } from "../pages/CreateTripPage/CreateTripPage";
+import { TripDetailsPage } from "../pages/TripDetailsPage/TripDetailsPage";
 
-
-export const Router = () => {
+export function Router() {
     return (
+        <BrowserRouter>
+            <Routes>
 
-<BrowserRouter>
-<Routes>
+                <Route index element={ <HomePage /> } />
+                <Route path="trips/list" element={ <ListTripsPage /> } />
+                <Route path="trips/application" element={ <ApplicationFormPage /> } />
+                <Route path="login" element={ <LoginPage /> } />
+                <Route path="admin/trips/list" element={ <AdminHomePage /> } />
+                <Route path="admin/trips/create" element={ <CreateTripPage /> } />
+                <Route path="admin/trips/:id" element={ <TripDetailsPage /> } />
 
-<Route index element ={<HomePage/>} />
-<Route path="/admin/trips/list" element ={<AdminHomePage/>} />
-<Route path="/trips/application" element ={<ApplicationFormPage/>} />
-<Route path="/admin/trips/create" element ={<CreateTripPage/>} />
-<Route path="/trips/list" element ={<ListTripsPage/>} />
-<Route path="/login" element ={<LoginPage/>} />
-<Route path="/admin/trips/:id" element ={<TripDetailsPage/>} />
-
-
-</Routes>
-</BrowserRouter>
-
-    )
-}
+            </Routes>
+        </BrowserRouter>
+    );
+};

@@ -1,15 +1,16 @@
-import React from "react";
 import { Router } from "./routes/Router";
+import {GlobalStyle, MainContainer} from "./App.jsx"
 
 
-const App = () => {
+function App() {
   return (
-    <div>
-<Router/>
-    </div>
+    <MainContainer>
+
+      <GlobalStyle />
+      <Router />
+
+    </MainContainer>
   );
-};
-
-
+}
 
 export default App;

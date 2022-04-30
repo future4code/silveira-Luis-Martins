@@ -1,18 +1,33 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-const useForm = (initialState) => {
-  const [form, setForm] = useState(initialState);
+export function useRequestData(url, headers) {
+    const [data, setData] = useState(headers);
+    const [isLoading, setIsLoading] = useState(false);
+    
+    const getData = async () => {
+        try {
+            setIsLoading(true);
 
-  const onChange = (event) => {
-    const { name, value } = event.target;
-    setForm({ ...form, [name]: value });
-  };
+            const headersAPI = {
+                headers: {
+                    auth: localStorage.getItem("token")
+                }
+            };
+    
+            const response = await axios.get(url, headersAPI);
+            setData(response.data);
+            setIsLoading(false);
 
-  const cleanFields = () => {
-    setForm(initialState);
-  };
+        } catch(error) {
+            console.log(error);
+            setIsLoading(false);
+        }
+    };
 
-  return { form, onChange, cleanFields };
+    useEffect(() => {
+        getData();
+    }, [url]);
+
+    return [data, getData, isLoading];
 };
-
-export default useForm;
