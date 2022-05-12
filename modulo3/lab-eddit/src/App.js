@@ -1,12 +1,10 @@
+import React from 'react';
+import RoutesApp from './routes/RoutesApp';
 
-
-
-
-
-function App() {
+const App = () => {
   return (
-    <div >
-<h1>TEST</h1>
+    <div>
+      < RoutesApp />
     </div>
   );
 }
