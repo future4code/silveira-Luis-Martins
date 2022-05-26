@@ -1,0 +1,19 @@
+{
+  "name": "templateAPIsREST",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start1": "tsc && node ./build/index1.js",
+    "start2": "tsc && node ./build/index2.js",
+    "start3": "tsc && node ./build/index3.js",
+    "start4": "tsc && node ./build/index4.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.4.4"
+  }
+}
