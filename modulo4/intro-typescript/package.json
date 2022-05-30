@@ -1,0 +1,23 @@
+{
+  "name": "introducao-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./build/index1.js",
+    "start2": "tsc && node ./build/index2.js",
+    "start3": "tsc && node ./build/index3.js",
+    "start4": "tsc && node ./build/index4.js",
+    "start5": "tsc && node ./build/index5.js",
+    "desafio6": "tsc && node ./build/desafio6.js",
+    "desafio7": "tsc && node ./build/desafio7.js",
+    "desafio8": "tsc && node ./build/desafio8.js",
+    "desafio9": "tsc && node ./build/desafio9.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.5.4"
+  }
+}
