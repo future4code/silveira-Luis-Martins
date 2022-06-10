@@ -72,7 +72,7 @@ app.get("/", async (req, res) => {
     try {
         const result =
         await connection.raw(`
-        SELECT * FROM TodoListTask
+        SELECT * FROM Tarefas
         `)
         res.status(200).send(result[0])
     } catch (error: any){
