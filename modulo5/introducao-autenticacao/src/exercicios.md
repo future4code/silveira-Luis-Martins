@@ -1,6 +1,6 @@
 Exercicio 1
 
-a) Eu considero melhor usar String em questão de facilidade e segurança, pois há possibilidades de misturar letras, numeros e caractéres especiais.
+a) E melhor usar String por ser mais facil e melhora a segurança, pois há possibilidades de misturar letras, numeros e caractéres especiais.
 
 Exercicio 2
 
