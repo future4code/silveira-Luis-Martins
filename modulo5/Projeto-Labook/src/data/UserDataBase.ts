@@ -1,86 +1,37 @@
-import { UserModel } from "../model/UserModel";
-import { BaseDatabase } from "../data/BaseDataBase";
+import { User } from "../model/User";
+import { BaseDatabase } from "./BaseDatabase";
 
+export class UserDatabase extends BaseDatabase{
 
-export class UserDataBase extends BaseDatabase {
+    private static TABLE_NAME = "Labook_users"
 
-    public async insertUser(user: UserModel){
+    signUp = async (newUser: User) => {
         try {
-            await this.getConnection()
-            .insert(user)
-            .into("Labook_users")
-        } catch (error: any) {
-            throw new Error(error.sqlMessage || error.message);
-        }
-
-    }
-
-    public async findUserByEmail(email: string): Promise<UserModel | undefined>{
-
-        try {
-
-            const user = await this.getConnection()
-            .select('*')
-            .from("Labook_users")
-            .where({email})
-
-            return user[0] && UserModel.toUserModel(user[0])
+            await BaseDatabase.connection()
+                    .insert({
+                        id: newUser.getId(),
+                        nome: newUser.getNome(),
+                        email: newUser.getEmail(),
+                        senha: newUser.getSenha(),
+                    })
+                    .into(UserDatabase.TABLE_NAME)
 
         } catch (error: any) {
-
-            throw new Error(error.sqlMessage || error.message);
+            throw new Error(error.sqlMessage || error.message)
         }
     }
 
-    public async findUserFollows(userId: string){
-
+    selectUserByEmail = async (email: string) => {
         try {
+            const result = await BaseDatabase.connection()
+                .select("*")
+                .from(UserDatabase.TABLE_NAME)
+                .where({email})
 
-            const follows = await this.getConnection()
-
-            .select('*')
-            .from("Labook_follows")
-            .where({userId})
-
-            return follows
+            return result[0] && User.toUserModel(result[0])
 
         } catch (error: any) {
-
-            throw new Error(error.sqlMessage || error.message);
-        }
-    }
-
-    public async insertFollow(userId: string, followId: string){
-
-        try {
-
-            const follows = await this.getConnection()
-
-            .insert({
-                userId,
-                followId
-            })
-            .into("Labook_follows")
-
-            return follows
-
-        } catch (error: any) {
-            throw new Error(error.sqlMessage || error.message);
-        }
-    }
-
-    public async unfollowProfile(userId: string, followId: string){
-        
-        try {
-            const follows = await this.getConnection()
-            .delete()
-            .from("Labook_follows")
-            .where({userId,followId})
-
-            return follows
-
-        } catch (error: any) {
-            throw new Error(error.sqlMessage || error.message);
+            throw new Error(error.sqlMessage || error.message)
         }
     }
 }

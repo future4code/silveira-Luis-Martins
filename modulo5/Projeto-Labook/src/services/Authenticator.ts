@@ -1,25 +1,27 @@
-import * as jwt from "jsonwebtoken"
+import { sign, verify } from "jsonwebtoken"
+import dotenv from "dotenv" 
+import { authenticationData } from "../types/authenticationData"
 
-export interface AuthenticationData {
-    id: string
-}
+dotenv.config()
 
 export class Authenticator {
 
-    public generateToken(input: AuthenticationData): string{
-        const token = jwt.sign(
-            input,
-            String(process.env.JWT_KEY),
-            {
-                expiresIn: process.env.AUTH_EXPIRES_IN
-            }
+    generateToken(payload: authenticationData): string {
+        const token = sign(
+            payload,
+            process.env.JWT_KEY as string,
+            { expiresIn: process.env.JWT_EXPIRES_IN as string }
         )
 
         return token
     }
 
-    public getTokenData(token: string): AuthenticationData{
-        const data = jwt.verify(token, String(process.env.JWT_KEY))
-        return data as AuthenticationData
+    getTokenData(token: string): authenticationData {
+        const payload = verify(
+            token,
+            process.env.JWT_KEY as string
+        )
+
+        return payload as authenticationData
     }
-} 
+}

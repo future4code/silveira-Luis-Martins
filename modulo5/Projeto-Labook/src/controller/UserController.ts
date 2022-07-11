@@ -1,79 +1,57 @@
-import {Request,Response} from "express"
-import { UserBusiness } from "../business/UserBusiness"
-import { loginInputDTO } from "../types/loginInputDTO"
-import { signupInputDTO } from "../types/signupInputDTO"
-
+import { Request, Response } from "express";
+import { UserBusiness } from "../business/UserBusiness";
+import { loginInputDTO } from "../types/loginInputDTO";
+import { UserInputDTO } from "../types/userInputDTO";
 
 export class UserController {
+    constructor(
+        private userBusiness: UserBusiness
+    ) { }
 
-    public async signup(req: Request,res: Response){
-
-        const {
-            name,
-            email,
-            password} = req.body
-
-        const input: signupInputDTO = {
-            name,
-            email,
-            password
-        }
+    signUp = async (req: Request, res: Response) => {
         try {
-            const token = await new UserBusiness().signup(input)
 
-            res.status(201).send({message: "usuário cadastrado com sucesso", token})
+            const { nome, email, senha } = req.body
+
+            const user: UserInputDTO = {
+                nome,
+                email,
+                senha
+            }
+
+            const token = await this.userBusiness.signUp(user)
+
+            res.status(201).send({ token })
         } catch (error: any) {
-            res.status(400).send(error.message)
-        }
-    }
-    public async login(req: Request,res: Response){
-
-        const {email,password} = req.body
-        const input: loginInputDTO = {
-
-            email,
-            password
-        }
-        try {
-            const token = await new UserBusiness().login(input)
-            res.status(201).send({message: "Usuário encontrado", token})
-        }catch (error: any) {
-            res.status(400).send(error.message)
+            if (res.statusCode === 200) {
+                res.status(500).send({ message: error.message })
+            } else {
+                res.status(res.statusCode).send({ message: error.sqlMessage || error.message })
+            }
         }
 
     }
 
-    public async follow(req: Request,res: Response){
-
-        const id = req.params.id
-        const token = String(req.headers.auth)
-
+    login = async (req: Request, res: Response) => {
         try {
 
-            await new UserBusiness().follow(id,token)
-            res.status(201).send("Amizade feita com sucesso")
+            const { email, senha } = req.body
 
+            const user: loginInputDTO = {
+                email,
+                senha
+            }
+
+            const token = await this.userBusiness.login(user)
+
+            res.status(200).send({ token })
+            
         } catch (error: any) {
-            res.status(400).send(error.message)
+            if (res.statusCode === 200) {
+                res.status(500).send({ message: error.message })
+            } else {
+                res.status(res.statusCode).send({ message: error.sqlMessage || error.message })
+            }
         }
-
     }
-
-    public async unfollow(req: Request,res: Response){
-
-        const id = req.params.id
-        const token = String(req.headers.auth)
-
-        try {
-
-            await new UserBusiness().unfollow(id,token)
-            res.status(201).send("Amizade desfeita com sucesso")
-
-        } catch (error: any) {
-            res.status(400).send(error.message)
-        }
-
-    }
-
-
-} 
+}

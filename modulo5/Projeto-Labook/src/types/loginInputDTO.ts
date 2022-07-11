@@ -1,4 +1,4 @@
 export type loginInputDTO = {
     email: string,
-    password: string
-} 
+    senha: string
+}
