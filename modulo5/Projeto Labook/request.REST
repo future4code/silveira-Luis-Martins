@@ -1,0 +1,39 @@
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+    "nome": "Luis",
+    "email": "luis1@labenu.com.br",
+    "senha": "123456"
+}
+
+###
+# @name login
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+    "email": "luis@labenu.com.br",
+    "senha": "123456"
+}
+
+
+###
+@token = {{login.response.body.token}}
+POST http://localhost:3003/post
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1aXNAbGFiZW51LmNvbS5iciIsImlkIjoiMzkxODJkODEtNjNjZC00MWFmLTlmY2EtYmFjN2MyOTM3ZDQzIiwiaWF0IjoxNjU3NTA5NDI4LCJleHAiOjE2NTc1MTA2Mjh9.h6DIm9zd_mwYN09G93qm4YagiVvWQ2gYyvN0Y01N7cM
+
+{
+    "foto": "asas",
+    "descricao": "Teste 3",
+    "data_criacao": "2022-07-25",
+    "tipo": "EVENTO"
+}
+
+
+###
+
+GET http://localhost:3003/post/4f3b190c-8d87-457e-9380-26babd17cce0
+Content-Type: application/json
+Authorization: {{token}}
