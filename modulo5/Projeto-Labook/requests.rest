@@ -4,18 +4,28 @@ Content-Type: application/json
 {
     "name": "Luis",
     "email": "Luis@gmail.com",
-    "password": "1234567"
+    "password": "123456"
 }
 ###
 
 # @name login
 
-POST http://localhost:3003/login
+POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-	"email": "Luis@gmail.com"",
+	"email": "Luis@gmail.com",
 	"password": "123456"
 }
 
 ###
+
+
+POST http://localhost:3003/follow/96240c77-33ba-40c5-bc97-c932a8141d41
+auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwY2RkNmE3LTBmNTUtNGJmYi1hMjFhLTc2MTc4YjQ2MTY4YiIsImlhdCI6MTY1NzMxNzY4OSwiZXhwIjoxNjU3NDkwNDg5fQ.sUstbryxSE8Rb7TYnLzcHP4Jo0_zPsPIhZ0tr6XU4mI
+
+###
+
+
+DELETE http://localhost:3003/unfollow/96240c77-33ba-40c5-bc97-c932a8141d41
+auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwY2RkNmE3LTBmNTUtNGJmYi1hMjFhLTc2MTc4YjQ2MTY4YiIsImlhdCI6MTY1NzMxNzY4OSwiZXhwIjoxNjU3NDkwNDg5fQ.sUstbryxSE8Rb7TYnLzcHP4Jo0_zPsPIhZ0tr6XU4mI
