@@ -1,0 +1,25 @@
+//Criar serviço
+
+POST http://localhost:3003/dogwalk/create
+Content-Type: application/json
+
+{
+  "name_pets":["marley", "rana"],
+  "date_schedule": "2022-05-06",  
+  "latitude": "0.8",
+  "longitude": "0.12",  
+  "date_start": "2022/01/06 18:00:00",
+  "date_end": "2022/01/06 19:00:00"
+} 
+ 
+//Checar serviço por data
+###
+GET http://localhost:3003/dogwalk/index?today=2022-05-06
+
+//Checar todos os serviços
+###
+GET http://localhost:3003/dogwalk/index
+
+
+
+
