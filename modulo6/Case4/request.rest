@@ -1,0 +1,32 @@
+
+//Created Product
+
+POST http://localhost:3003/
+Content-Type: application/json
+
+{
+      "id": 10,
+      "name": "Moletom",
+      "tags": ["frio", "inverno", "chocolate quente"]
+}
+
+###
+
+//Search Product by ID
+
+GET http://localhost:3003/products?id=10
+Content-Type: application/json
+
+###
+
+//Search Product by Name
+
+GET http://localhost:3003/products?name=Moletom
+Content-Type: application/json
+
+###
+
+//Search Product by Tags
+
+GET http://localhost:3003/products?tag=inverno
+Content-Type: application/json
